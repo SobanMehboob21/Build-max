@@ -16,7 +16,10 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: soban11776/build-max:v1 
+        image: soban11776/bm-frontend:v1 
+        command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+        ports:
+        - containerPort: 5173 
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,4 +39,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: soban11776/build-max:v2 
+        image: soban11776/bm-frontend:v1 
+        command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+        ports:
+        - containerPort: 5173

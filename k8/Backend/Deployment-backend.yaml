@@ -16,8 +16,14 @@ spec:
     spec:
       containers:
       - name: backend
-        image: soban11776/build-max:v1
+        image: soban11776/bm-backend:v1 
+        envFrom: 
+          - configMapRef:
+              name: backend-config
+          - secretRef:
+              name: backend-secrets
 ---
+# --- BACKEND CANARY ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -36,10 +42,9 @@ spec:
     spec:
       containers:
       - name: backend
-        image: soban11776/build-max:v2
+        image: soban11776/bm-backend:v1 
         envFrom:
           - configMapRef:
               name: backend-config
           - secretRef:
               name: backend-secrets
-        
