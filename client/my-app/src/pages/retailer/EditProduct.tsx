@@ -46,7 +46,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     formData.append("ProductPrice", productPrice);
     if (imageFile) formData.append("image", imageFile);
 
-    const token = localStorage.getItem("retailerToken"); // ✅ get token
+    const token = localStorage.getItem("retailerToken"); 
 
     const { data } = await axios.put(
       `http://localhost:5000/api/retailer-products/${id}`,
@@ -54,10 +54,11 @@ const handleSubmit = async (e: React.FormEvent) => {
       {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`, // ✅ send token
+          Authorization: `Bearer ${token}`, 
         },
       }
     );
+    console.log(data)
 
     const updatedProduct = {
       ...product,

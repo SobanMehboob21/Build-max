@@ -55,10 +55,11 @@ const AddProduct = () => {
         data,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // ← ONLY THIS
+            Authorization: `Bearer ${token}`, 
           },
         }
       );
+      console.log(res)
       alert("Success!");
     } catch (err: any) {
       console.log("401 Error Response:", err.response?.data);
