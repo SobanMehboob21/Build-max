@@ -28,10 +28,12 @@ jobs:
         run: npm ci
         working-directory: ./client/my-app
 
+ 
+
       - name: Build
         run: npm run build --if-present
         working-directory: ./client/my-app
 
-      - name: Test
+      - name: Run Test
         run: npm test
         working-directory: ./client/my-app
