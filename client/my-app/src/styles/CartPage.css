@@ -1,0 +1,21 @@
+.card img {
+  max-height: 120px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-body h5 {
+  font-size: 1.1rem;
+}
+
+.card-body .btn {
+  border-radius: 10px;
+}
+
+.container.main-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

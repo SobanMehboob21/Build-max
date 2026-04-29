@@ -1,0 +1,367 @@
+/* Main Page Styles */
+.main_page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation */
+.main_nav_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.main_page_img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.main_page_img:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.main_logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.main_page_img:hover .main_logo {
+  transform: scale(1.1);
+}
+
+/* Navigation Links */
+.main_links ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main_nav_links {
+  color: white !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.main_nav_links::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.main_nav_links:hover::before {
+  left: 100%;
+}
+
+.main_nav_links:hover {
+  background: white;
+  color: #2d3748 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: white;
+}
+
+/* Shop Now Section */
+.shop-now-section {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shop-now-btn {
+  display: inline-block;
+  padding: 18px 50px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-now-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.shop-now-btn:hover::before {
+  left: 100%;
+}
+
+.shop-now-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  color: white;
+  text-decoration: none;
+}
+
+.shop-now-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Text Center Alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Row and Column Adjustments */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-lg-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main_nav_wrap {
+    padding: 15px 0;
+  }
+  
+  .main_page_img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .main_nav_links {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .shop-now-btn {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_nav_wrap {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .main_links ul {
+    gap: 15px;
+  }
+  
+  .main_nav_links {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .shop-now-section {
+    padding-bottom: 80px;
+  }
+  
+  .shop-now-btn {
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main_page_img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .main_links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .main_nav_links {
+    padding: 8px 25px;
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+  }
+  
+  .shop-now-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .shop-now-section {
+    padding-bottom: 60px;
+  }
+}
+
+/* Loading State for Video */
+#bg-video {
+  transition: opacity 0.3s ease;
+}
+
+#bg-video.loading {
+  opacity: 0;
+}
+
+/* Enhanced Focus States for Accessibility */
+.main_nav_links:focus,
+.shop-now-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .main_nav_wrap,
+  .shop-now-section,
+  .main_page_img,
+  .main_nav_links,
+  .shop-now-btn {
+    animation: none;
+    transition: none;
+  }
+  
+  .main_nav_links::before,
+  .shop-now-btn::before {
+    display: none;
+  }
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+  .main_nav_links:hover {
+    color: #1a202c !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .main_nav_links {
+    border-width: 3px;
+  }
+  
+  .shop-now-btn {
+    border-width: 4px;
+  }
+  
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}

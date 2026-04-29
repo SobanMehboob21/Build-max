@@ -1,0 +1,54 @@
+.form__setup {
+  padding: 50px 0;
+}
+.small_margin {
+  margin-bottom: 18px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background: #e6e6e6;
+  padding: 50px 0;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+.form_input {
+  width: 520px;
+  padding: 14px 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+.error_msg {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+.form_btn {
+  border: 1px solid gray;
+  font-size: 14px;
+  border-radius: 12px;
+  padding: 7px 20px;
+}
+.text_area {
+    width: 530px; 
+    height: 150px;
+    resize: none; 
+    padding: 12px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+}
+.already_acc{
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}

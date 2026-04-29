@@ -1,0 +1,17 @@
+.add_product_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.input_fields {
+  width: 40%;
+}
+.add_input_field {
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  font-size: 14px;
+  font-weight: 400;
+}

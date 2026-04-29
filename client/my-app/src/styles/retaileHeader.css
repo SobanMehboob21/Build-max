@@ -1,0 +1,13 @@
+.my--products .links{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2 ease;
+}
+.my--products .links:hover{
+    color: #ababab;
+    
+
+}
