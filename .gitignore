@@ -1,0 +1,13 @@
+# Ignore Kubernetes secrets
+Secret.yaml
+Secret-backend.yaml
+
+# Ignore local environment files
+.env
+
+# Ignore heavy dependencies (MERN)
+node_modules/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

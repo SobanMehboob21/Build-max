@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-stable
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: build-max-backend 
+  template:
+    metadata:
+      labels:
+        app: build-max-backend
+        version: v1
+    spec:
+      containers:
+      - name: backend
+        image: soban11776/build-max:v1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-canary
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: build-max-backend 
+  template:
+    metadata:
+      labels:
+        app: build-max-backend
+        version: v2
+    spec:
+      containers:
+      - name: backend
+        image: soban11776/build-max:v2
+        envFrom:
+          - configMapRef:
+              name: backend-config
+          - secretRef:
+              name: backend-secrets
+        

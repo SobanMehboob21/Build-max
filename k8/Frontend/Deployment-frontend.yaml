@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-stable
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: build-max-frontend 
+  template:
+    metadata:
+      labels:
+        app: build-max-frontend
+        version: v1 
+    spec:
+      containers:
+      - name: frontend
+        image: soban11776/build-max:v1 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-canary
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: build-max-frontend 
+  template:
+    metadata:
+      labels:
+        app: build-max-frontend
+        version: v2
+    spec:
+      containers:
+      - name: frontend
+        image: soban11776/build-max:v2 
