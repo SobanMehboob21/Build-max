@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+
 import "../../../styles/AllProductsItems/FeaturedProducts.css";
 import drill from "../../../assets/drill.jpg";
 

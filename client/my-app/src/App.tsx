@@ -7,7 +7,7 @@ import { RetailerHeader } from "./components/RetailerHeader";
 import MainPage from "./pages/MainPage";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
-import RetailerForm from "./pages/retailer/RetailerFormSignup";
+// import RetailerForm from "./pages/retailer/RetailerFormSignup";
 import AdminMain from "./pages/Admin/AdminMain";   // ✅ Add this
 import AdminMainPanal from "./pages/Admin/AdminMainPanal";
 import CartPage from "./pages/CartPage";

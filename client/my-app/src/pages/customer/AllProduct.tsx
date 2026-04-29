@@ -1,4 +1,4 @@
-import React from "react";
+
 import allproducts_main from "../../assets/allproducts_main.jpg";
 import '../../styles/AllProduct.css'
 import FeaturedProducts from "./AllProductsItems/FeaturedProducts";

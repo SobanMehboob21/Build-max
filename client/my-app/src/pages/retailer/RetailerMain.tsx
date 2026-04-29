@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Routes, Route, Navigate } from "react-router-dom";
 import AddProduct from "./AddProduct";
 import MyProduct from "./MyProduct";

@@ -1,4 +1,4 @@
-import React from "react";
+
 import drill from "../../assets/drill.jpg";
 import HeaderTwo from "../../components/HeaderTwo";
 
