@@ -9,27 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - run: docker build . -t soban11776/build-max
+    - run: echo "${{secrets.DOCKER_HUB_PSWD_TWO}}" | docker login -u ${{DOCKER_NAME_TWO}} --password-stdin
+    - run: docker push soban11776/build-max
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_NAME_TWO }}
-          password: ${{ secrets.DOCKER_HUB_PSWD_TWO }}
 
-      - name: Build and Push Frontend
-        uses: docker/build-push-action@v5
-        with:
-          context: ./client/my-app
-          file: ./client/my-app/Dockerfile
-          push: true
-          tags: soban11776/bm-frontend:latest
 
-      - name: Build and Push Backend
-        uses: docker/build-push-action@v5
-        with:
-          context: ./server
-          file: ./server/Dockerfile
-          push: true
-          tags: soban11776/bm-backend:latest
+ 
+   
