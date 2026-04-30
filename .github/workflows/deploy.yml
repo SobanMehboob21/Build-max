@@ -22,9 +22,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
          
-          context: ./client/my-app
+          context: .
          
-          file: client/my-app/Dockerfile
+          file: ./client/my-app/Dockerfile
           push: true
           tags: soban11776/bm-frontend:latest
 
