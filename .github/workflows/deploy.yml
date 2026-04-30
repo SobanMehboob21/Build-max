@@ -21,16 +21,17 @@ jobs:
       - name: Build and Push Frontend
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./client/my-app/Dockerfile
+         
+          context: ./client/my-app
+         
+          file: client/my-app/Dockerfile
           push: true
           tags: soban11776/bm-frontend:latest
 
       - name: Build and Push Backend
         uses: docker/build-push-action@v5
         with:
-          # Use the server folder as the build context
           context: ./server
-          file: ./server/Dockerfile
+          file: server/Dockerfile
           push: true
           tags: soban11776/bm-backend:latest
