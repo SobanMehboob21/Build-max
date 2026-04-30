@@ -15,7 +15,6 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          # Fixed: Added 'secrets.' prefix
           username: ${{ secrets.DOCKER_NAME_TWO }}
           password: ${{ secrets.DOCKER_HUB_PSWD_TWO }}
 
@@ -23,12 +22,15 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./client/my-app
+          file: ./client/my-app/Dockerfile
           push: true
           tags: soban11776/bm-frontend:latest
 
       - name: Build and Push Backend
         uses: docker/build-push-action@v5
         with:
+          # Use the server folder as the build context
           context: ./server
+          file: ./server/Dockerfile
           push: true
           tags: soban11776/bm-backend:latest
